@@ -7,7 +7,7 @@ export default function Sidebar() {
     <div className="fixed left-0 top-0 h-screen  w-16 bg-[#3B6790] flex flex-col items-center justify-center space-y-6 shadow-lg z-10">
       {/* LinkedIn */}
       <a
-        href="https://linkedin.com/in/your-profile"
+        href="https://www.linkedin.com/in/muhammad-ilham-febriana-4234a21a4/"
         target="_blank"
         rel="noopener noreferrer"
         className="text-white hover:text-[#BE3144] transition-colors duration-300"
@@ -17,7 +17,7 @@ export default function Sidebar() {
 
       {/* GitHub */}
       <a
-        href="https://github.com/your-username"
+        href="https://github.com/Understrike123"
         target="_blank"
         rel="noopener noreferrer"
         className="text-white hover:text-[#BE3144] transition-colors duration-300"
@@ -27,7 +27,7 @@ export default function Sidebar() {
 
       {/* Email */}
       <a
-        href="mailto:email@example.com"
+        href="mailto:muhilhamfebr2@gmail.com"
         className="text-white hover:text-[#BE3144] transition-colors duration-300"
       >
         <Mail size={24} />

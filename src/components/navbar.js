@@ -8,27 +8,39 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-[#3B6790] p-4 shadow-lg fixed top-0 left-o w-full">
+    <nav className="bg-[#3B6790] p-4 shadow-lg fixed top-0 left-o w-full z-[5]">
       <div className="container mx-auto flex justify-center items-center">
         {/* Tautan Navigasi (Desktop) */}
         <div className="hidden md:flex space-x-8">
           <Link
-            href="/"
+            href="#main"
             className="text-white hover:text-[#BE3144] transition-colors duration-300"
           >
             Home
           </Link>
           <Link
-            href="/about"
+            href="#about"
             className="text-white hover:text-[#BE3144] transition-colors duration-300"
           >
             About
           </Link>
           <Link
-            href="/contact"
+            href="#experience"
             className="text-white hover:text-[#BE3144] transition-colors duration-300"
           >
-            Contact
+            Pengalaman
+          </Link>
+          <Link
+            href="#skills"
+            className="text-white hover:text-[#BE3144] transition-colors duration-300"
+          >
+            Keahlian
+          </Link>
+          <Link
+            href="#contact"
+            className="text-white hover:text-[#BE3144] transition-colors duration-300"
+          >
+            Hubungi saya
           </Link>
         </div>
 
