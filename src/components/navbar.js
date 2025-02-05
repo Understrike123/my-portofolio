@@ -8,48 +8,59 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-blue-600 p-4">
-      <div className="container mx-auto flex justify-between items-center">
-        <Link href="/" className="text-white text-xl font-bold">
-          MyLogo
-        </Link>
-        <div className="hidden md:flex space-x-6">
-          <Link href="/" className="text-white hover:text-gray-200">
+    <nav className="bg-[#3B6790] p-4 shadow-lg fixed top-0 left-o w-full">
+      <div className="container mx-auto flex justify-center items-center">
+        {/* Tautan Navigasi (Desktop) */}
+        <div className="hidden md:flex space-x-8">
+          <Link
+            href="/"
+            className="text-white hover:text-[#BE3144] transition-colors duration-300"
+          >
             Home
           </Link>
-          <Link href="/about" className="text-white hover:text-gray-200">
+          <Link
+            href="/about"
+            className="text-white hover:text-[#BE3144] transition-colors duration-300"
+          >
             About
           </Link>
-          <Link href="/contact" className="text-white hover:text-gray-200">
+          <Link
+            href="/contact"
+            className="text-white hover:text-[#BE3144] transition-colors duration-300"
+          >
             Contact
           </Link>
         </div>
+
+        {/* Tombol Menu (Mobile) */}
         <button
-          className="md:hidden text-white"
+          className="md:hidden text-white hover:text-[#BE3144] transition-colors duration-300"
           onClick={() => setIsOpen(!isOpen)}
         >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
+          {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
+
+      {/* Tautan Navigasi (Mobile) */}
       {isOpen && (
-        <div className="md:hidden flex flex-col space-y-4 mt-4 p-4 bg-blue-700">
+        <div className="md:hidden flex flex-col space-y-4 mt-4 p-4 bg-[#2973B2] rounded-lg shadow-md">
           <Link
             href="/"
-            className="text-white hover:text-gray-200"
+            className="text-white hover:text-[#BE3144] transition-colors duration-300"
             onClick={() => setIsOpen(false)}
           >
             Home
           </Link>
           <Link
             href="/about"
-            className="text-white hover:text-gray-200"
+            className="text-white hover:text-[#BE3144] transition-colors duration-300"
             onClick={() => setIsOpen(false)}
           >
             About
           </Link>
           <Link
             href="/contact"
-            className="text-white hover:text-gray-200"
+            className="text-white hover:text-[#BE3144] transition-colors duration-300"
             onClick={() => setIsOpen(false)}
           >
             Contact
