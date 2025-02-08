@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { Download } from "lucide-react";
 
 export default function HeroSection() {
   return (
@@ -10,13 +11,32 @@ export default function HeroSection() {
     >
       {/* Bagian Kiri - Nama & Deskripsi */}
       <div className="fixed left-0 top-0 h-screen w-16 bg-[#3B6790] flex flex-col items-center justify-center space-y-6 shadow-lg"></div>
-      <div className="flex-1 text-center md:text-left space-y-4">
+      <div className="flex-1 text-center md:text-left space-y-4 max-w-[90%] mx-auto">
         <h1 className="text-4xl md:text-5xl font-bold">
           Muhammad Ilham Febriana
         </h1>
         <p className="text-xl md:text-2xl">
           Web Developer & Data Science Enthusiast
         </p>
+
+        {/* Perubahan di sini: justify-center diubah menjadi justify-start */}
+        <div className="my-8 flex flex-col md:flex-row items-center justify-center md:justify-start gap-4">
+          <a
+            href="#contact"
+            className="bg-[#BE3144] hover:bg-[#a82b3a] text-white font-bold py-3 px-6 rounded-lg transition duration-300 flex items-center justify-center gap-2"
+          >
+            Hubungi saya
+          </a>
+          <a
+            href="/CV_Muhammad Ilham F (Updated January 2025).pdf"
+            download="Muhammad_Ilham_Febriana_CV.pdf"
+            className="bg-[#BE3144] hover:bg-[#a82b3a] text-white font-bold py-3 px-6 rounded-lg transition duration-300 flex items-center justify-center gap-2 "
+          >
+            <Download size={20} />
+            Download CV
+          </a>
+        </div>
+
         {/* <div className="flex justify-center md:justify-start space-x-4 mt-4">
           <a
             href="https://www.linkedin.com/in/muhammad-ilham-febriana-4234a21a4/"
