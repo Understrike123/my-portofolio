@@ -1,8 +1,46 @@
 "use client";
 
-import React from "react";
+import { useState } from "react";
 
 const Footer = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [responseMessage, setResponseMessage] = useState("");
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setResponseMessage("");
+
+    const res = await fetch("/api/feedback", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    const data = await res.json();
+    setLoading(false);
+
+    if (res.ok) {
+      setResponseMessage("Feedback berhasil dikirim!");
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } else {
+      setResponseMessage(data.error || "Terjadi kesalahan, coba lagi.");
+    }
+  };
+
   return (
     <footer className="bg-[#143D60] text-white py-10 px-6">
       <div id="contact" className="max-w-4xl mx-auto text-center">
@@ -12,51 +50,58 @@ const Footer = () => {
           form di bawah ini.
         </p>
 
-        {/* Form */}
-        <form className="bg-[#3B6790] p-6 rounded-lg shadow-lg space-y-4">
-          {/* Nama */}
+        <form
+          onSubmit={handleSubmit}
+          className="bg-[#3B6790] p-6 rounded-lg shadow-lg space-y-4"
+        >
           <input
             type="text"
+            name="name"
             placeholder="Nama Anda"
+            value={formData.name}
+            onChange={handleChange}
             className="w-full p-3 rounded-lg bg-[#1E3A5A] text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-300"
             required
           />
-
-          {/* Email */}
           <input
             type="email"
+            name="email"
             placeholder="Email Address"
+            value={formData.email}
+            onChange={handleChange}
             className="w-full p-3 rounded-lg bg-[#1E3A5A] text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-300"
             required
           />
-
-          {/* Subject */}
           <input
             type="text"
+            name="subject"
             placeholder="Subject"
+            value={formData.subject}
+            onChange={handleChange}
             className="w-full p-3 rounded-lg bg-[#1E3A5A] text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-300"
             required
           />
-
-          {/* Isi Feedback */}
           <textarea
+            name="message"
             placeholder="Tulis pesan Anda..."
             rows="4"
+            value={formData.message}
+            onChange={handleChange}
             className="w-full p-3 rounded-lg bg-[#1E3A5A] text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-300"
             required
           ></textarea>
-
-          {/* Tombol Submit */}
           <button
             type="submit"
             className="w-full bg-[#BE3144] hover:bg-[#a82b3a] text-white font-bold py-3 rounded-lg transition duration-300"
+            disabled={loading}
           >
-            Send
+            {loading ? "Mengirim..." : "Send"}
           </button>
         </form>
+
+        {responseMessage && <p className="mt-4 text-lg">{responseMessage}</p>}
       </div>
 
-      {/* Copyright */}
       <div className="mt-6 text-center text-sm text-gray-300">
         © {new Date().getFullYear()} Muhammad Ilham Febriana. All rights
         reserved.

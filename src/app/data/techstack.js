@@ -50,4 +50,14 @@ export const techStack = [
     name: "Docker",
     image: "/icon/Docker.png",
   },
+  {
+    id: 11,
+    name: "Next JS",
+    image: "/icon/NextJS.png",
+  },
+  {
+    id: 12,
+    name: "Laravel",
+    image: "/icon/Laravel.png",
+  },
 ];

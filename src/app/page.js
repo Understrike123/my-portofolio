@@ -11,7 +11,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="pl-16 md:pl-16 min-h-screen bg-gradient-to-b from-[#3B6790] to-[#2973B2]">
+    <div className="overflow-hidden pl-16 md:pl-16 min-h-screen bg-gradient-to-b from-[#3B6790] to-[#2973B2]">
       <Sidebar />
       <div className="fixed left-18 ml-2 top-4 z-50">
         <Link

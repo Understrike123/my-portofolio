@@ -6,29 +6,35 @@ import { experiences } from "../app/data/experience"; // Import data pengalaman
 export default function ExperienceSection() {
   const experienceRefs = useRef([]);
 
+  // useEffect untuk mengatur animasi sliding
   useEffect(() => {
+    // Membuat IntersectionObserver untuk mendeteksi kapan elemen masuk ke viewport
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
+            // Menambahkan class "animate-slide-in" saat elemen terlihat di viewport
             entry.target.classList.add("animate-slide-in");
+            // Berhenti mengamati elemen setelah animasi dipicu
             observer.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 } // Ambang batas: 10% dari elemen harus terlihat
     );
 
+    // Mengamati setiap elemen yang ada di experienceRefs
     experienceRefs.current.forEach((ref) => {
       if (ref) observer.observe(ref);
     });
 
+    // Membersihkan observer saat komponen di-unmount
     return () => {
       experienceRefs.current.forEach((ref) => {
         if (ref) observer.unobserve(ref);
       });
     };
-  }, []);
+  }, []); // Dependency array kosong agar useEffect hanya dijalankan sekali
 
   return (
     <section
@@ -43,8 +49,8 @@ export default function ExperienceSection() {
           {experiences.map((experience, index) => (
             <div
               key={experience.id}
-              ref={(el) => (experienceRefs.current[index] = el)}
-              className={`bg-white p-6 rounded-lg shadow-lg transform transition-all duration-500 ease-out opacity-0 ${
+              ref={(el) => (experienceRefs.current[index] = el)} // Menyimpan referensi ke elemen
+              className={`bg-white p-6 rounded-lg shadow-lg transform transition-all duration-10 ease-out opacity-0 ${
                 index % 2 === 0 ? "translate-x-[-100px]" : "translate-x-[100px]"
               }`}
             >
@@ -96,7 +102,7 @@ export default function ExperienceSection() {
         </div>
       </div>
 
-      {/* Tambahkan CSS untuk animasi */}
+      {/* CSS untuk animasi sliding */}
       <style jsx>{`
         @keyframes slideIn {
           from {
@@ -110,6 +116,7 @@ export default function ExperienceSection() {
         }
         .animate-slide-in {
           animation: slideIn 0.6s ease-out forwards;
+          will-change: transform, opacity;
         }
       `}</style>
     </section>

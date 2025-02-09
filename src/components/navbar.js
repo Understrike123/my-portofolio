@@ -25,6 +25,12 @@ export default function Navbar() {
             About
           </Link>
           <Link
+            href="#tech-stack"
+            className="text-white hover:text-[#BE3144] transition-colors duration-300"
+          >
+            Tech Stack
+          </Link>
+          <Link
             href="#experience"
             className="text-white hover:text-[#BE3144] transition-colors duration-300"
           >
@@ -57,25 +63,46 @@ export default function Navbar() {
       {isOpen && (
         <div className="md:hidden flex flex-col space-y-4 mt-4 p-4 bg-[#2973B2] rounded-lg shadow-md">
           <Link
-            href="/"
+            href="#main"
             className="text-white hover:text-[#BE3144] transition-colors duration-300"
             onClick={() => setIsOpen(false)}
           >
             Home
           </Link>
           <Link
-            href="/about"
+            href="#about"
             className="text-white hover:text-[#BE3144] transition-colors duration-300"
             onClick={() => setIsOpen(false)}
           >
             About
           </Link>
           <Link
-            href="/contact"
+            href="#tech-stack"
             className="text-white hover:text-[#BE3144] transition-colors duration-300"
             onClick={() => setIsOpen(false)}
           >
-            Contact
+            Tech Stack
+          </Link>
+          <Link
+            href="#experience"
+            className="text-white hover:text-[#BE3144] transition-colors duration-300"
+            onClick={() => setIsOpen(false)}
+          >
+            Pengalaman
+          </Link>
+          <Link
+            href="#skills"
+            className="text-white hover:text-[#BE3144] transition-colors duration-300"
+            onClick={() => setIsOpen(false)}
+          >
+            Keahlian
+          </Link>
+          <Link
+            href="#contact"
+            className="text-white hover:text-[#BE3144] transition-colors duration-300"
+            onClick={() => setIsOpen(false)}
+          >
+            Hubungi saya
           </Link>
         </div>
       )}
