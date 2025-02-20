@@ -6,8 +6,8 @@ export const projects = [
     description:
       "Website untuk pemesanan tiket pesawat online. Dibangun dengan Laravel dan Apache.",
     technologies: ["Laravel", "Apache", "PHP", "MySQL"],
-    image: "/image/SWINGS.png", // Ganti dengan path gambar proyek Anda
-    link: "https://example.com/swing", // Ganti dengan link proyek
+    image: "/image/SWINGS.png",
+    link: "https://github.com/Alifan12/Kelompok6_TiketPesawat",
   },
   {
     id: 2,
@@ -15,8 +15,8 @@ export const projects = [
     description:
       "Website untuk menyediakan informasi kesehatan. Dibangun dengan React JS (Frontend) dan Express JS (Backend).",
     technologies: ["React JS", "Express JS", "MongoDB", "Tailwind CSS"],
-    image: "/image/IRIS.png", // Ganti dengan path gambar proyek Anda
-    link: "https://example.com/iris", // Ganti dengan link proyek
+    image: "/image/IRIS.png",
+    link: "https://github.com/OcabaTechIndo/Hello.SehatYuks",
   },
   {
     id: 3,
@@ -24,7 +24,7 @@ export const projects = [
     description:
       "Website profil perusahaan dengan desain UI yang menarik. Dibangun menggunakan WordPress.",
     technologies: ["WordPress", "UI Design", "HTML", "CSS"],
-    image: "/image/siskamol.png", // Ganti dengan path gambar proyek Anda
-    link: "https://example.com/siskamol", // Ganti dengan link proyek
+    image: "/image/siskamol.png",
+    link: "https://haniflanang.wordpress.com/",
   },
 ];
