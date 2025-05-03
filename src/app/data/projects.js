@@ -5,7 +5,7 @@ export const projects = [
     name: "Swing Website",
     description:
       "Website untuk pemesanan tiket pesawat online. Dibangun dengan Laravel dan Apache.",
-    technologies: ["Laravel", "Apache", "PHP", "MySQL"],
+    technologies: ["CodeIgniter 4", "Apache", "PHP", "MySQL"],
     image: "/image/SWINGS.png",
     link: "https://github.com/Alifan12/Kelompok6_TiketPesawat",
   },
