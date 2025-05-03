@@ -9,7 +9,7 @@ export const experiences = [
     description: [
       "Membangun antarmuka pengguna dinamis dengan React JS, fokus pada peningkatan keamanan akses data.",
       "Mengintegrasikan pipeline Continuous Integration/Deployment, mengelola pull request, melakukan code review, dan melakukan pengujian load, stress, unit, integration, dan end-to-end.",
-      "Melakukan operasi CRUD (Create, Read, Update, Delete) menggunakan MySQL dan MongoDB untuk mengoptimalkan proses manajemen data.",
+      "Melakukan operasi CRUD (Create, Read, Update, Delete) menggunakan Local Storage, Session Storage dan MongoDB untuk mengoptimalkan proses manajemen data.",
       "Berkolaborasi sebagai Front-End Developer dengan tim 4 orang pada aplikasi web IRIS, menyederhanakan akses informasi kesehatan untuk pengguna.",
     ],
   },
